@@ -4,6 +4,13 @@ using Tools;
 
 public class DraggableManager : MonoSingleton<DraggableManager>
 {
+    [SerializeField] float _startScale;
+    [SerializeField] float _endScale;
+    [SerializeField] float _catchDuration;
+    [SerializeField] float _releaseDuration;
+    [SerializeField] AnimationCurve _catchCurve;
+    [SerializeField] AnimationCurve _releaseCurve;
+
     Draggable _dragging = null;
     Vector2 _offset;
 
@@ -19,6 +26,22 @@ public class DraggableManager : MonoSingleton<DraggableManager>
         _draggables.Remove(d);
     }
 
+    public float GetCatchScale(float startTime)
+    {
+        float nt = (Time.time - startTime) / _catchDuration;
+        float ct = _catchCurve.Evaluate(nt);
+
+        return Mathf.LerpUnclamped(_startScale, _endScale, ct);
+    }
+
+    public float GetReleaseScale(float startTime)
+    {
+        float nt = (Time.time - startTime) / _releaseDuration;
+        float ct = _releaseCurve.Evaluate(nt);
+
+        return Mathf.LerpUnclamped(_startScale, _endScale, ct);
+    }
+
     // Update is called once per frame
     public void Actualize()
     {
@@ -29,6 +52,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
 
             if (_dragging != null)
             {
+                _dragging.StartDrag();
                 _offset = (Vector2)_dragging.transform.position - wpos;
             }
 
@@ -43,10 +67,13 @@ public class DraggableManager : MonoSingleton<DraggableManager>
         }
         else if(Input.GetMouseButton(0))
         {
-            Vector2 wpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if(_dragging != null)
+            {
+                Vector2 wpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Vector2 pos = wpos + _offset;
-            _dragging.transform.position = pos;
+                Vector2 pos = wpos + _offset;
+                _dragging.transform.position = pos;
+            }
         }
     }
 

@@ -6,6 +6,9 @@ public class Draggable : DepthObject
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
 
+    float _startTime = -100f;
+    bool _isDragging;
+
     public Rect GetCollider()
     {
         Vector2 center = _centerCollider + (Vector2)transform.position;
@@ -28,12 +31,33 @@ public class Draggable : DepthObject
 
     public void StartDrag()
     {
-        // todo
+        _startTime = Time.time;
+        _isDragging = true;
     }
 
     public void StopDrag()
     {
-        // todo
+        _startTime = Time.time;
+        _isDragging = false;
+    }
+
+    void LateUpdate()
+    {
+        float scale = 0;
+
+        if (_isDragging)
+        {
+            scale = DraggableManager.instance.GetCatchScale(_startTime);
+        }
+        else
+        {
+            scale = DraggableManager.instance.GetReleaseScale(_startTime);
+        }
+
+        Vector3 vscale = Vector3.one * scale;
+        vscale.z = 1;
+
+        transform.localScale = vscale;
     }
 
     protected override void OnDestroy()

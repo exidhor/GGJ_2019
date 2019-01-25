@@ -27,7 +27,7 @@ public class DepthManager : MonoSingleton<DepthManager>
         for (int i = 0; i < _objects.Count; i++)
         {
             Vector3 pos = _objects[i].transform.position;
-            pos.z = _startDepth + _stepDepth * (_objects.Count - i);
+            pos.z = _startDepth + _stepDepth * i;
             _objects[i].transform.position = pos;
         }
     }

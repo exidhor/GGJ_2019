@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81046c9f96334225ba054cb8751b709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dragDepth: -5
   _startScale: 1
   _endScale: 1.5
   _catchDuration: 0.15

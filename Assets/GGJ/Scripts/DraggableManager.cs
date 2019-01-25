@@ -4,6 +4,7 @@ using Tools;
 
 public class DraggableManager : MonoSingleton<DraggableManager>
 {
+    [SerializeField] float _dragDepth;
     [SerializeField] float _startScale;
     [SerializeField] float _endScale;
     [SerializeField] float _catchDuration;
@@ -34,7 +35,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
         return Mathf.LerpUnclamped(_startScale, _endScale, ct);
     }
 
-    public float GetReleaseScale(float startTime)
+    public float GetReleaseScale(float startTime)       
     {
         float nt = (Time.time - startTime) / _releaseDuration;
         float ct = _releaseCurve.Evaluate(nt);
@@ -53,6 +54,11 @@ public class DraggableManager : MonoSingleton<DraggableManager>
             if (_dragging != null)
             {
                 _dragging.StartDrag();
+
+                Vector3 pos = _dragging.transform.position;
+                pos.z = _dragDepth;
+                _dragging.transform.position = pos;
+
                 _offset = (Vector2)_dragging.transform.position - wpos;
             }
 
@@ -72,7 +78,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
                 Vector2 wpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Vector2 pos = wpos + _offset;
-                _dragging.transform.position = pos;
+                _dragging.transform.position = new Vector3(pos.x, pos.y, _dragging.transform.position.z);
             }
         }
     }

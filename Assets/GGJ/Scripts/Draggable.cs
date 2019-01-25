@@ -33,12 +33,16 @@ public class Draggable : DepthObject
     {
         _startTime = Time.time;
         _isDragging = true;
+
+        DepthManager.instance.Unregister(this);
     }
 
     public void StopDrag()
     {
         _startTime = Time.time;
         _isDragging = false;
+
+        DepthManager.instance.Register(this);
     }
 
     void LateUpdate()

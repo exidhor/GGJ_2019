@@ -52,4 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startDepth: 0
-  _stepDepth: -1
+  _stepDepth: 1

@@ -5,13 +5,32 @@ using Tools;
 public class CameraManager : MonoSingleton<CameraManager>
 {
     [SerializeField] float _boundingRatio;
+    [SerializeField] Vector2 _limits;
     [SerializeField] float _speed;
 
-    Rect _rect;
+    Rect _cameraRect;
+    Rect _worldBounds;
+
+    Vector2 xRange;
+    Vector2 yRange;
 
     void Awake()
     {
-        _rect = GetRect();
+        _cameraRect = GetRect();
+
+        _worldBounds = new Rect(_limits / -2, _limits);
+
+        Vector2 cmin = Camera.main.ViewportToWorldPoint(Vector2.zero);
+        Vector2 cmax = Camera.main.ViewportToWorldPoint(Vector2.one);
+
+        Vector2 size = cmax - cmin;
+        Vector2 extend = size / 2;
+
+        xRange.x = -_limits.x / 2 + extend.x;
+        xRange.y = _limits.x / 2 - extend.x;
+
+        yRange.x = -_limits.y / 2 + extend.y;
+        yRange.y = _limits.y / 2 - extend.y;
     }
 
     Rect GetRect()
@@ -27,9 +46,9 @@ public class CameraManager : MonoSingleton<CameraManager>
     {
         Vector2 vwpos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-        if(!_rect.Contains(vwpos))
+        if(!_cameraRect.Contains(vwpos))
         {
-            Vector2 closest = OldMathHelper.ClosestPointToRect(_rect, vwpos);
+            Vector2 closest = OldMathHelper.ClosestPointToRect(_cameraRect, vwpos);
             Vector2 wposClosest = Camera.main.ViewportToWorldPoint(closest);
             Vector2 wposMouse = Camera.main.ViewportToWorldPoint(vwpos);
             Vector2 move = wposMouse - wposClosest;
@@ -45,6 +64,9 @@ public class CameraManager : MonoSingleton<CameraManager>
             Vector3 cameraPos = Camera.main.transform.position;
             cameraPos.x += move.x;
             cameraPos.y += move.y;
+
+            cameraPos.x = Mathf.Clamp(cameraPos.x, xRange.x, xRange.y);
+            cameraPos.y = Mathf.Clamp(cameraPos.y, yRange.x, yRange.y);
 
             Camera.main.transform.position = cameraPos;
         }
@@ -62,5 +84,9 @@ public class CameraManager : MonoSingleton<CameraManager>
         Vector2 size = wmax - wmin;
 
         Gizmos.DrawWireCube(wmin + size / 2, size);
+
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawWireCube(Vector2.zero, _limits);
     }
 }

@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundingRatio: 0.6
+  _limits: {x: 300, y: 200}
   _speed: 50

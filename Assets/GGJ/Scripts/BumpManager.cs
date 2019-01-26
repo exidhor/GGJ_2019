@@ -30,7 +30,7 @@ public class BumpManager : MonoSingleton<BumpManager>
         }
 
         float ctx = _curveX.Evaluate(nt);
-        float cty = strength > 0 ? _curveY.Evaluate(nt) : _curveY.Evaluate(1 - nt);
+        float cty = strength > 0 ? _curveY.Evaluate(nt) : _curveY.Evaluate(nt);
 
         float x = Mathf.LerpUnclamped(0, strength, ctx);
         float y = Mathf.LerpUnclamped(0, Mathf.Abs(strength * _scaleY), cty);

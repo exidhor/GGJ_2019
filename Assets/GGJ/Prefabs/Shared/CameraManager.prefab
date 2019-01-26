@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc9e11d29daa41428804893117aea20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boundingRatio: 0.6
+  _boundingRatio: 0.7
   _limits: {x: 300, y: 200}
-  _speed: 50
+  _speed: 70

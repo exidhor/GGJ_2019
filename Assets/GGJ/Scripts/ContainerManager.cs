@@ -48,7 +48,7 @@ public class ContainerManager : MonoSingleton<ContainerManager>
 
     public void ReleaseDrag(Draggable drag)
     {
-        Container c = FindContainer(drag.transform.position);
+        Container c = FindContainer(drag.center);
 
         if (c == null) return;
 
@@ -58,7 +58,7 @@ public class ContainerManager : MonoSingleton<ContainerManager>
         }
         else
         {
-            // todo : projection
+            drag.Bumb();
         }
     }
 

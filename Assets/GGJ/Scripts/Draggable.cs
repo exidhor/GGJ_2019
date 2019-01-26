@@ -8,12 +8,22 @@ public class Draggable : DepthObject
         get { return _shape; }
     }
 
+    public Vector2 center
+    {
+        get { return GetCollider().center; }
+    }
+
     [SerializeField] Shape _shape;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
 
-    float _startTime = -100f;
+    float _startTimeDrag = -100f;
     bool _isDragging;
+
+    float _startTimeBump = -100f;
+    float _bumpingStrength;
+    bool _isBumping;
+    Vector2 _originBump;
 
     public Rect GetCollider()
     {
@@ -37,15 +47,16 @@ public class Draggable : DepthObject
 
     public void StartDrag()
     {
-        _startTime = Time.time;
+        _startTimeDrag = Time.time;
         _isDragging = true;
+        _isBumping = false;
 
         DepthManager.instance.Unregister(this);
     }
 
     public void StopDrag()
     {
-        _startTime = Time.time;
+        _startTimeDrag = Time.time;
         _isDragging = false;
 
         DepthManager.instance.Register(this);
@@ -57,11 +68,11 @@ public class Draggable : DepthObject
 
         if (_isDragging)
         {
-            scale = DraggableManager.instance.GetCatchScale(_startTime);
+            scale = DraggableManager.instance.GetCatchScale(_startTimeDrag);
         }
         else
         {
-            scale = DraggableManager.instance.GetReleaseScale(_startTime);
+            scale = DraggableManager.instance.GetReleaseScale(_startTimeDrag);
         }
 
         Vector3 vscale = Vector3.one * scale;
@@ -69,6 +80,31 @@ public class Draggable : DepthObject
         vscale.z = 1;
 
         transform.localScale = vscale;
+
+        if(_isBumping)
+        {
+            bool isFinish;
+            Vector2 move = BumpManager.instance.Anim(out isFinish, _startTimeBump, _bumpingStrength);
+        
+            if(isFinish)
+            {
+                _isBumping = false;
+            }
+
+            Vector3 pos = transform.position;
+            pos.x = _originBump.x + move.x;
+            pos.y = _originBump.y + move.y;
+            transform.position = pos;
+        }
+    }
+
+    public void Bumb()
+    {
+        _isBumping = true;
+        _startTimeBump = Time.time;
+        _bumpingStrength = BumpManager.instance.GetStrength();
+        _bumpingStrength *= Mathf.Sign(Random.value - 0.5f);
+        _originBump = transform.position;
     }
 
     protected override void OnDestroy()

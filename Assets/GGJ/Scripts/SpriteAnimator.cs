@@ -26,7 +26,7 @@ public class SpriteAnimator : MonoBehaviour
         {
             _index++;
 
-            if(_index >= _sprites.Count - 1)
+            if(_index >= _sprites.Count)
             {
                 _index = 0;
             }

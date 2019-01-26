@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shape: 0
-  _centerCollider: {x: 0, y: 0}
+  _centerCollider: {x: 0, y: 1.53}
   _sizeCollider: {x: 3.37, y: 2.66}
 --- !u!212 &212666318423513184
 SpriteRenderer:

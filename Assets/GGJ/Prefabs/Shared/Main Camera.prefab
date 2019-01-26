@@ -102,4 +102,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFov: 25
   maxFov: 50
-  sensitivity: 7
+  sensitivity: -7

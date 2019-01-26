@@ -53,9 +53,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _validator: {fileID: 0}
   _canvas: {fileID: 0}
+  _cameraEnd: {fileID: 0}
   _endText: {fileID: 0}
   _timePerLetter: 0.1
   _anims:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

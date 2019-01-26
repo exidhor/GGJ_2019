@@ -20,10 +20,27 @@ public class SceneManager : MonoSingleton<SceneManager>
     public void Fade()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+
+        Invoke("ReloadGame", 0.5f);
     }
 
     void ReloadGame()
     {
-        // todo
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(0);
+
+
+        Invoke("ReloadMainScene", 0.2f);
+    }
+
+    void ReloadMainScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+
+        Invoke("UnloadScene", 1f);
+    }
+
+    void UnloadScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(1);
     }
 }

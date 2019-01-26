@@ -46,9 +46,13 @@ public class FadeAnim : MonoBehaviour
             {
                 nt = 1;
                 _fadeIn = false;
+
+                Invoke("FadeOut", 0.5f);
             }
 
             _image.alpha = nt;
+
+            return;
         }
 
         if (_fadeOut)
@@ -62,6 +66,8 @@ public class FadeAnim : MonoBehaviour
             }
 
             _image.alpha = 1 - nt;
+
+            return;
         }
     }
 }

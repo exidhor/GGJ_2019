@@ -362,6 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14623a758d8174764908a82dc77e2456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _durationIn: 1
+  _durationIn: 0.5
   _durationOut: 1
   _image: {fileID: 2087272249}

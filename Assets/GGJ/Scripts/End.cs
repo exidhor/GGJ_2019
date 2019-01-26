@@ -12,12 +12,13 @@ public class End : MonoSingleton<End>
 
     [SerializeField] Validator _validator;
     [SerializeField] GameObject _canvas;
+    [SerializeField] GameObject _cameraEnd;
     [SerializeField] Text _endText;
     [SerializeField] float _timePerLetter = 1;
 
     [SerializeField] List<Anim> _anims = new List<Anim>();
 
-    bool _isFinish = true;
+    bool _isFinish = false;
     string _string;
     int _letterIndex;
     float _currentLetterTime;
@@ -70,6 +71,7 @@ public class End : MonoSingleton<End>
         if (ContainerManager.instance.CanFinish())
         {
             _canvas.SetActive(true);
+            _cameraEnd.SetActive(true);
 
             _string = "EASY END !!";
             _isWritting = true;

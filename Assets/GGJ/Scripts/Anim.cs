@@ -51,7 +51,7 @@ public class Anim : MonoBehaviour
             float ctz = _rotateCurve.Evaluate(nt);
             float z = Mathf.LerpAngle(_startRotateZ, _endRotateZ, ctz);
 
-            transform.rotation = Quaternion.Euler(0, 0, z);
+            transform.localRotation = Quaternion.Euler(0, 0, z);
 
             float ctx = _curveX.Evaluate(nt);
             float x = Mathf.LerpUnclamped(_startX, _endX, ctx);
@@ -59,13 +59,13 @@ public class Anim : MonoBehaviour
             float cty = _curveY.Evaluate(nt);
             float y = Mathf.LerpUnclamped(_startY, _endY, cty);
 
-            Vector3 pos = transform.position;
+            Vector3 pos = transform.localPosition;
             pos.x = x;
             pos.y = y;
 
-            transform.position = pos;
+            transform.localPosition = pos;
 
-            return nt < 1;
+            return nt == 1;
         }
     }
 

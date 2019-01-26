@@ -10,9 +10,12 @@ public class Zoom : MonoBehaviour
  
     void Update()
     {
-        float fov = Camera.main.orthographicSize;
-        fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
-        fov = Mathf.Clamp(fov, minFov, maxFov);
-        Camera.main.orthographicSize = fov;
+        if(!End.instance.isFinish)
+        {
+            float fov = Camera.main.orthographicSize;
+            fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
+            fov = Mathf.Clamp(fov, minFov, maxFov);
+            Camera.main.orthographicSize = fov;
+        }
     }
 }

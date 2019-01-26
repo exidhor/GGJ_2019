@@ -107,6 +107,11 @@ public class Draggable : DepthObject
             pos.x = _originBump.x + move.x;
             pos.y = _originBump.y + move.y;
             transform.position = pos;
+
+            if(isFinish)
+            {
+                HidderManager.instance.CheckForHide(this);
+            }
         }
     }
 

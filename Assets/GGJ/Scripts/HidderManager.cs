@@ -23,6 +23,18 @@ public class HidderManager : MonoSingleton<HidderManager>
         drag.SetHide(found);
     }
 
+    public void Spawn()
+    {
+        _hidders.Shuffle();
+
+        int count = HiddenObjects.instance.count;
+        for (int i = 0; i < count && i < _hidders.Count; i++)
+        {
+            Draggable d = HiddenObjects.instance.GetOne();
+            _hidders[i].SetDrag(d);
+        }
+    }
+
     public void Register(Hidder hidder)
     {
         _hidders.Add(hidder);

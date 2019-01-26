@@ -1493,6 +1493,7 @@ Transform:
   - {fileID: 1713807714}
   - {fileID: 929442288}
   - {fileID: 1847855190}
+  - {fileID: 1449502934}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1913,6 +1914,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4679854377190150, guid: 787434d738f468f42a071e965833d02f,
     type: 2}
   m_PrefabInternal: {fileID: 1420642941}
+--- !u!1001 &1449502933
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1136745341}
+    m_Modifications:
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 304e4fe2eaea34ea383ceb820b38701c, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1449502934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4169112264602598, guid: 304e4fe2eaea34ea383ceb820b38701c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1449502933}
 --- !u!4 &1454741111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4831454497548220, guid: a29b1df6ae47f40f58f663cf316fa8cc,

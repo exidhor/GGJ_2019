@@ -8,7 +8,7 @@ public class Hidder : MonoBehaviour
 
     List<Draggable> _drags = new List<Draggable>();
 
-    void Start()
+    void OnEnable()
     {
         HidderManager.instance.Register(this);
     }
@@ -30,6 +30,22 @@ public class Hidder : MonoBehaviour
 
     public void SetHide(Draggable d)
     {
+        _drags.Add(d);
+    }
+
+    public void SetDrag(Draggable d)
+    {
+        Rect r = GetCollider();
+
+        float x = UnityEngine.Random.Range(r.xMin, r.xMax);
+        float y = UnityEngine.Random.Range(r.yMin, r.yMax);
+
+        Vector3 pos = d.transform.position;
+        pos.x = x;
+        pos.y = y;
+        d.transform.position = pos;
+
+        d.SetHide(true);
         _drags.Add(d);
     }
 

@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-	void Update () 
+    void Start()
+    {
+        // INIT GLOBAL
+
+        HidderManager.instance.Spawn();
+    }
+
+    void Update () 
     {
         DraggableManager.instance.Actualize();
         ContainerManager.instance.Actualize();

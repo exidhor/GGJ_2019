@@ -24,6 +24,14 @@ public class End : MonoSingleton<End>
 
     bool _isWritting;
 
+    void Awake()
+    {
+        for (int i = 0; i < _anims.Count; i++)
+        {
+            _anims[i].Init();
+        }
+    }
+
     public void Actualize()
     {
         if(Input.GetMouseButtonDown(0))

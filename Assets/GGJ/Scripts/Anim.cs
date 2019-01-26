@@ -37,9 +37,12 @@ public class Anim : MonoBehaviour
         }
 
 
-        public bool Actualize(Transform transform)
+        public bool Actualize(Transform transform, Vector2 offset)
         {
             _time += Time.deltaTime;
+
+            if (_duration == 0)
+                return true;
 
             float nt = _time / _duration;
 
@@ -60,8 +63,8 @@ public class Anim : MonoBehaviour
             float y = Mathf.LerpUnclamped(_startY, _endY, cty);
 
             Vector3 pos = transform.localPosition;
-            pos.x = x;
-            pos.y = y;
+            pos.x = x + offset.x;
+            pos.y = y + offset.y;
 
             transform.localPosition = pos;
 
@@ -71,12 +74,18 @@ public class Anim : MonoBehaviour
 
     [SerializeField] List<AnimData> _anims = new List<AnimData>();
 
+    Vector2 _offset;
     int _currentIndex = 0;
 
     public void Init()
     {
-        _anims[_currentIndex].Init(0f);
-        _anims[_currentIndex].Actualize(transform);
+        _offset = transform.localPosition;
+
+        if(_anims.Count > 0)
+        {
+            _anims[_currentIndex].Init(0f);
+        }
+        //_anims[_currentIndex].Actualize(transform, _offset);
     }
 
     void LateUpdate()
@@ -84,7 +93,7 @@ public class Anim : MonoBehaviour
         if (_anims.Count == 0)
             return;
 
-        bool isFinish = _anims[_currentIndex].Actualize(transform);
+        bool isFinish = _anims[_currentIndex].Actualize(transform, _offset);
 
         if (isFinish)
         {

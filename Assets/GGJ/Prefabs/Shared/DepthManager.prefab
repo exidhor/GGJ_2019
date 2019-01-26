@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f05927462a5647d393975acffcfe611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startDepth: 0
+  _startDepth: 10
   _stepDepth: 1

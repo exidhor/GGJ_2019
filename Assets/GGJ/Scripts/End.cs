@@ -81,4 +81,9 @@ public class End : MonoSingleton<End>
             }
         }
     }
+
+    public void OnRetry()
+    {
+        SceneManager.instance.Fade();
+    }
 }

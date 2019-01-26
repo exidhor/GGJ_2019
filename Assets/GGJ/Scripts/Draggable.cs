@@ -74,7 +74,10 @@ public class Draggable : DepthObject
     {
         base.OnDestroy();
 
-        DraggableManager.instance.Unregister(this);
+        if(DraggableManager.internalInstance != null)
+        {
+            DraggableManager.instance.Unregister(this);
+        }
     }
 
     void OnDrawGizmos()

@@ -55,3 +55,15 @@ MonoBehaviour:
   _canvas: {fileID: 0}
   _endText: {fileID: 0}
   _timePerLetter: 0.1
+  _anims:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

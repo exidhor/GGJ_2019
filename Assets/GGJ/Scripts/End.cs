@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 using Tools;
 
 public class End : MonoSingleton<End>
@@ -9,6 +9,8 @@ public class End : MonoSingleton<End>
     [SerializeField] GameObject _canvas;
     [SerializeField] Text _endText;
     [SerializeField] float _timePerLetter = 1;
+
+    [SerializeField] List<Anim> _anims = new List<Anim>();
 
     string _string;
     int _letterIndex;
@@ -57,6 +59,11 @@ public class End : MonoSingleton<End>
 
             _string = "EASY END !!";
             _isWritting = true;
+        }
+
+        for (int i = 0; i < _anims.Count; i++)
+        {
+            _anims[i].Init();
         }
     }
 }

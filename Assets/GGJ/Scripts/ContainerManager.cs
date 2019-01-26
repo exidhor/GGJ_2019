@@ -26,15 +26,43 @@ public class ContainerManager : MonoSingleton<ContainerManager>
 
             if(container != null)
             {
-                if(container.shape == DraggableManager.instance.current.shape)
+                if(container.containing == null && container.shape == DraggableManager.instance.current.shape)
                 {
-                    // todo : halo
+                    Draggable drag = DraggableManager.instance.current;
+                    Vector3 dragPos = drag.transform.position;
+                    dragPos.x = container.transform.position.x;
+                    dragPos.y = container.transform.position.y;
+                    drag.transform.position = dragPos;
                 }
-                else 
+                else
                 {
                     // todo : halo
                 }
             }
+        }
+    }
+
+    public void ReleaseDrag(Draggable drag)
+    {
+        Container c = FindContainer(drag.transform.position);
+
+        if (c == null) return;
+
+        if(c.containing == null && c.shape == DraggableManager.instance.current.shape)
+        {
+            c.containing = drag;
+        }
+        else
+        {
+            // todo : projection
+        }
+    }
+
+    public void OnCatch(Draggable drag)
+    {
+        for (int i = 0; i < _containers.Count; i++)
+        {
+            _containers[i].TryToRelease(drag);
         }
     }
 

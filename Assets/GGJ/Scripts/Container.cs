@@ -8,10 +8,18 @@ public class Container : MonoBehaviour
         get { return _shape; }
     }
 
+    public Draggable containing
+    {
+        get { return _containing; }
+        set { _containing = value; }
+    }
+
     [SerializeField] Shape _shape;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
     [SerializeField] float _angle;
+
+    [SerializeField] Draggable _containing;
 
     void Start()
     {
@@ -23,6 +31,19 @@ public class Container : MonoBehaviour
         if(ContainerManager.internalInstance != null)
         {
             ContainerManager.instance.Unregister(this);
+        }
+    }
+
+    public void Fill(Draggable drag)
+    {
+        _containing = drag;
+    }
+
+    public void TryToRelease(Draggable drag)
+    {
+        if(_containing == drag)
+        {
+            _containing = null;
         }
     }
 

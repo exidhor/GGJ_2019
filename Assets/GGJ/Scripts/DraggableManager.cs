@@ -63,6 +63,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
 
             if (_dragging != null)
             {
+                ContainerManager.instance.OnCatch(_dragging);
                 _dragging.StartDrag();
 
                 Vector3 pos = _dragging.transform.position;
@@ -77,6 +78,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
         {
             if(_dragging != null)
             {
+                ContainerManager.instance.ReleaseDrag(_dragging);
                 _dragging.StopDrag();
                 _dragging = null;
             }

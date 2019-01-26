@@ -5,6 +5,11 @@ using Tools;
 
 public class End : MonoSingleton<End>
 {
+    public bool isFinish
+    {
+        get { return _isFinish; }
+    }
+
     [SerializeField] Validator _validator;
     [SerializeField] GameObject _canvas;
     [SerializeField] Text _endText;
@@ -12,6 +17,7 @@ public class End : MonoSingleton<End>
 
     [SerializeField] List<Anim> _anims = new List<Anim>();
 
+    bool _isFinish = true;
     string _string;
     int _letterIndex;
     float _currentLetterTime;
@@ -59,11 +65,12 @@ public class End : MonoSingleton<End>
 
             _string = "EASY END !!";
             _isWritting = true;
-        }
+            _isFinish = true;
 
-        for (int i = 0; i < _anims.Count; i++)
-        {
-            _anims[i].Init();
+            for (int i = 0; i < _anims.Count; i++)
+            {
+                _anims[i].Init();
+            }
         }
     }
 }

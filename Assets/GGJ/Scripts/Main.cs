@@ -13,11 +13,15 @@ public class Main : MonoBehaviour
 
     void Update () 
     {
-        DraggableManager.instance.Actualize();
-        ContainerManager.instance.Actualize();
-        HidderManager.instance.Actualize();
-        DepthManager.instance.Actualize();
-        CameraManager.instance.Actualize();
+        if(!End.instance.isFinish)
+        {
+            DraggableManager.instance.Actualize();
+            ContainerManager.instance.Actualize();
+            HidderManager.instance.Actualize();
+            DepthManager.instance.Actualize();
+            CameraManager.instance.Actualize();
+        }
+
         End.instance.Actualize();
 	}
 }

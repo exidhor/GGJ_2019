@@ -81,6 +81,9 @@ public class Anim : MonoBehaviour
 
     void LateUpdate()
     {
+        if (_anims.Count == 0)
+            return;
+
         bool isFinish = _anims[_currentIndex].Actualize(transform);
 
         if (isFinish)

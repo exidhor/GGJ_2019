@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shape: 0
-  _centerCollider: {x: 0, y: 0}
+  _centerCollider: {x: 0, y: 3.27}
   _sizeCollider: {x: 4.35, y: 6.6}
 --- !u!114 &114984777529023848
 MonoBehaviour:

@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Draggable : DepthObject
 {
+    public Shape shape
+    {
+        get { return _shape; }
+    }
+
+    [SerializeField] Shape _shape;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
 

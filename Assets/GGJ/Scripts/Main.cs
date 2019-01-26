@@ -7,6 +7,7 @@ public class Main : MonoBehaviour
 	void Update () 
     {
         DraggableManager.instance.Actualize();
+        ContainerManager.instance.Actualize();
         DepthManager.instance.Actualize();
 	}
 }

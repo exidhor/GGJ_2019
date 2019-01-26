@@ -4,6 +4,16 @@ using Tools;
 
 public class DraggableManager : MonoSingleton<DraggableManager>
 {
+    public bool isDragging
+    {
+        get { return _dragging != null; }
+    }
+
+    public Draggable current
+    {
+        get { return _dragging; }
+    }
+
     [SerializeField] float _dragDepth;
     [SerializeField] float _startScale;
     [SerializeField] float _endScale;

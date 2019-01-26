@@ -33,6 +33,10 @@ public class ContainerManager : MonoSingleton<ContainerManager>
                     dragPos.x = container.transform.position.x;
                     dragPos.y = container.transform.position.y;
                     drag.transform.position = dragPos;
+
+                    Vector3 scale = drag.transform.localScale;
+                    scale.x = Mathf.Abs(scale.x) * Mathf.Sign(container.transform.localScale.x);
+                    drag.transform.localScale = scale;
                 }
                 else
                 {
@@ -50,7 +54,7 @@ public class ContainerManager : MonoSingleton<ContainerManager>
 
         if(c.containing == null && c.shape == DraggableManager.instance.current.shape)
         {
-            c.containing = drag;
+            c.Fill(drag);
         }
         else
         {

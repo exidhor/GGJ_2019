@@ -37,7 +37,11 @@ public class Container : MonoBehaviour
     public void Fill(Draggable drag)
     {
         _containing = drag;
-    }
+
+        //Vector3 scale = drag.transform.localScale;
+        //scale.x *= Mathf.Sign(transform.localScale.x);
+        //drag.transform.localScale = scale;
+    } 
 
     public void TryToRelease(Draggable drag)
     {
@@ -51,8 +55,8 @@ public class Container : MonoBehaviour
     {
         Vector2 center = _centerCollider + (Vector2)transform.position;
         Vector2 size = _sizeCollider;
-        size.x *= transform.lossyScale.x;
-        size.y *= transform.lossyScale.y;
+        //size.x *= transform.lossyScale.x;
+        //size.y *= transform.lossyScale.y;
 
         return new Rect(center.x - size.x / 2,
                         center.y - size.y / 2,

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212439140865732124}
   - component: {fileID: 114459531300571168}
   - component: {fileID: 114855138906827402}
+  - component: {fileID: 114872784746944248}
   m_Layer: 0
   m_Name: bush_01_f01
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948241644367302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.6, y: 22.1, z: 0}
+  m_LocalPosition: {x: -65.1, y: 35.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,6 +70,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ffee4e38017e2e4083b8e30185acf64, type: 3}
   - {fileID: 21300000, guid: d2a4c479bd42dfd4ba79ccd30c708c23, type: 3}
   - {fileID: 21300000, guid: 4ade68591ce77e04e9792bc29058a0c5, type: 3}
+--- !u!114 &114872784746944248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948241644367302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89f05c5512074e59a3ec7d2634741a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _centerCollider: {x: 0.49, y: 4.84}
+  _sizeCollider: {x: 14.22, y: 8}
 --- !u!212 &212439140865732124
 SpriteRenderer:
   m_ObjectHideFlags: 1

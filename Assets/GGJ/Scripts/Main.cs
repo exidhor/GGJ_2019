@@ -8,6 +8,7 @@ public class Main : MonoBehaviour
     {
         DraggableManager.instance.Actualize();
         ContainerManager.instance.Actualize();
+        HidderManager.instance.Actualize();
         DepthManager.instance.Actualize();
         CameraManager.instance.Actualize();
 	}

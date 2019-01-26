@@ -13,6 +13,11 @@ public class Draggable : DepthObject
         get { return GetCollider().center; }
     }
 
+    public bool isHide
+    {
+        get { return _isHide; }
+    }
+
     [SerializeField] Shape _shape;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
@@ -25,6 +30,8 @@ public class Draggable : DepthObject
     bool _isBumping;
     Vector2 _originBump;
 
+    bool _isHide;
+
     public Rect GetCollider()
     {
         Vector2 center = _centerCollider + (Vector2)transform.position;
@@ -36,6 +43,11 @@ public class Draggable : DepthObject
                         center.y - size.y / 2,
                         size.x, 
                         size.y);
+    }
+
+    public void SetHide(bool hide)
+    {
+        _isHide = hide;
     }
 
     protected override void Start()
@@ -100,6 +112,7 @@ public class Draggable : DepthObject
 
     public void Bumb()
     {
+        _isHide = false;
         _isBumping = true;
         _startTimeBump = Time.time;
         _bumpingStrength = BumpManager.instance.GetStrength();

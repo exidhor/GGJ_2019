@@ -80,6 +80,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
             {
                 ContainerManager.instance.ReleaseDrag(_dragging);
                 _dragging.StopDrag();
+                HidderManager.instance.CheckForHide(_dragging);
                 _dragging = null;
             }
         }
@@ -104,7 +105,7 @@ public class DraggableManager : MonoSingleton<DraggableManager>
         {
             Rect rect = _draggables[i].GetCollider();
 
-            if(rect.Contains(wpos))
+            if(!_draggables[i].isHide && rect.Contains(wpos))
             {
                 float dist = Vector2.Distance(rect.center, wpos);
 

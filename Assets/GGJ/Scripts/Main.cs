@@ -18,5 +18,6 @@ public class Main : MonoBehaviour
         HidderManager.instance.Actualize();
         DepthManager.instance.Actualize();
         CameraManager.instance.Actualize();
+        End.instance.Actualize();
 	}
 }

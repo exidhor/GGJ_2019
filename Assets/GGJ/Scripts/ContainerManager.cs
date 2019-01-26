@@ -93,4 +93,17 @@ public class ContainerManager : MonoSingleton<ContainerManager>
 
         return best;
     }
+
+    public bool CanFinish()
+    {
+        for (int i = 0; i < _containers.Count; i++)
+        {
+            if(_containers[i].containing == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

@@ -55,28 +55,20 @@ MonoBehaviour:
   - type: 0
     score: 10
     chaos: 0
-    endMessage: Base Skeleton
+    endMessage: He has a funny bone
   - type: 1
-    score: 10
-    chaos: 0
-    endMessage: Fire Skeleton
+    score: 20
+    chaos: -10
+    endMessage: Burn the witch !
   - type: 2
-    score: 10
-    chaos: 0
-    endMessage: Blue Skeleton
+    score: 30
+    chaos: -20
+    endMessage: The great Belphegor
   - type: 3
-    score: 10
-    chaos: 0
-    endMessage: Vegetables
+    score: 5
+    chaos: 15
+    endMessage: Finnish your vegetables !
   - type: 4
-    score: 10
-    chaos: 0
-    endMessage: Construction
-  - type: 5
-    score: 10
-    chaos: 0
-    endMessage: SciFy
-  - type: 6
-    score: 10
-    chaos: 0
-    endMessage: Us
+    score: 5
+    chaos: 30
+    endMessage: Clumsy hard worker. Will be missed.

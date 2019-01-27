@@ -1790,6 +1790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chaos: {fileID: 1055371888}
   _score: {fileID: 1317932484}
+  _defaultEndMessage: R.I.P. but this is not complete ...
 --- !u!1001 &823799144
 Prefab:
   m_ObjectHideFlags: 0

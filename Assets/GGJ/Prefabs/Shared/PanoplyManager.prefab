@@ -67,16 +67,16 @@ MonoBehaviour:
   - type: 3
     score: 10
     chaos: 0
-    endMessage: Blue Skeleton
+    endMessage: Vegetables
   - type: 4
     score: 10
     chaos: 0
-    endMessage: Blue Skeleton
+    endMessage: Construction
   - type: 5
     score: 10
     chaos: 0
-    endMessage: Blue Skeleton
+    endMessage: SciFy
   - type: 6
     score: 10
     chaos: 0
-    endMessage: Blue Skeleton
+    endMessage: Us

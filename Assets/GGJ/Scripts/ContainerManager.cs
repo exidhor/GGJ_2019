@@ -8,6 +8,8 @@ public class ContainerManager : MonoSingleton<ContainerManager>
     [SerializeField] Text _chaos;
     [SerializeField] Text _score;
 
+    [SerializeField] string _defaultEndMessage = "R.I.P. but this is not complete ...";
+
     List<Container> _containers = new List<Container>();
 
     public void Register(Container container)
@@ -130,5 +132,28 @@ public class ContainerManager : MonoSingleton<ContainerManager>
         }
 
         return true;
+    }
+
+    public string GetMessage()
+    {
+        bool isFullPanoply = true;
+
+        PanoplyType type = _containers[0].containing.type;
+
+        for (int i = 1; i < _containers.Count; i++)
+        {
+            if (type != _containers[i].containing.type)
+            {
+                isFullPanoply = false;
+                break;
+            }
+        }
+
+        if(isFullPanoply)
+        {
+            return PanoplyManager.instance.Get(type).endMessage;
+        }
+
+        return _defaultEndMessage;
     }
 }

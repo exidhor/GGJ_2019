@@ -17,6 +17,7 @@ public class End : MonoSingleton<End>
     [SerializeField] Text _endText;
     [SerializeField] float _timePerLetter = 1;
 
+
     [Header("Container Mapping")]
     [SerializeField] Container _pelvisContainer;
     [SerializeField] Container _torsoContainer;
@@ -103,7 +104,7 @@ public class End : MonoSingleton<End>
             _canvas.SetActive(true);
             _cameraEnd.SetActive(true);
 
-            _string = "EASY END !!";
+            _string = ContainerManager.instance.GetMessage();
             _isWritting = true;
             _isFinish = true;
 

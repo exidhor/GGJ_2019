@@ -80,28 +80,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: 84ab240d4ef25464883bc564aa5fc377
-=======
-    spriteID: e3a1150546d8144e5a62f3006a1bb7f4
->>>>>>> 85c22c017eea0378ec40d425d7e5f2063a9313a1
+    spriteID: eadafcc5b8fb44e58a88695f416af224
     vertices: []
     indices: 
     edges: []

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212698722536803072}
   - component: {fileID: 114909653869269338}
   - component: {fileID: 114777015571548810}
+  - component: {fileID: 114160649851238506}
   m_Layer: 0
   m_Name: tree_01_f01
   m_TagString: Untagged
@@ -35,13 +36,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997891430481864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.92, y: -61.51, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 58.533524, y: -9.818211, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114160649851238506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997891430481864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89f05c5512074e59a3ec7d2634741a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _multiX: 1.17
+  _multiY: 2.1
+  _name: tree
+  _centerCollider: {x: 0, y: 45.3}
+  _sizeCollider: {x: 36.9, y: 11.04}
 --- !u!114 &114777015571548810
 MonoBehaviour:
   m_ObjectHideFlags: 1

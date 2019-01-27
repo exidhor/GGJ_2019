@@ -35,8 +35,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178528348066630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -72.79, y: -69.90172, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -71.722466, y: 39.17947, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,8 +53,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89f05c5512074e59a3ec7d2634741a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _centerCollider: {x: 0, y: 5.18}
-  _sizeCollider: {x: 7.39, y: 9.04}
+  _multiX: 1.51
+  _multiY: 4.35
+  _name: tombtwo
+  _centerCollider: {x: 0.9, y: 2.36}
+  _sizeCollider: {x: 4.91, y: 1.96}
 --- !u!114 &114976688877346136
 MonoBehaviour:
   m_ObjectHideFlags: 1

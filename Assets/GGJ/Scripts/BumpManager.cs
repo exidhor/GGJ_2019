@@ -75,6 +75,8 @@ public class BumpManager : MonoSingleton<BumpManager>
             return Vector2.zero;
         }
 
+        dt -= delay;
+
         float nt = dt / bd._duration;
 
         if(nt > 1)

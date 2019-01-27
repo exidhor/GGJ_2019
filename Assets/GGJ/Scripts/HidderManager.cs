@@ -78,7 +78,7 @@ public class HidderManager : MonoSingleton<HidderManager>
 
         for (int i = 0; i < _hidders.Count; i++)
         {
-            Rect rect = _hidders[i].GetCollider();
+            Rect rect = _hidders[i].GetCollider(true);
 
             if (rect.Contains(wpos))
             {

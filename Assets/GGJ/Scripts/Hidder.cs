@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class Hidder : MonoBehaviour
 {
+    [Header("Infos")]
+    [SerializeField] string _name;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
 
@@ -58,7 +60,7 @@ public class Hidder : MonoBehaviour
     {
         for (int i = 0; i < _drags.Count; i++)
         {
-            _drags[i].Bumb();
+            _drags[i].Bumb(_name);
         }
 
         _drags.Clear();
@@ -83,4 +85,5 @@ public class Hidder : MonoBehaviour
                         size.x,
                         size.y);
     }
+
 }

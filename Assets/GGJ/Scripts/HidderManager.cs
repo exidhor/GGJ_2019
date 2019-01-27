@@ -4,6 +4,7 @@ using Tools;
 
 public class HidderManager : MonoSingleton<HidderManager>
 {
+    [SerializeField] int maxRange = 3;
     List<Hidder> _hidders = new List<Hidder>();
 
     public void CheckForHide(Draggable drag)
@@ -25,13 +26,23 @@ public class HidderManager : MonoSingleton<HidderManager>
 
     public void Spawn()
     {
-        _hidders.Shuffle();
+        List<Hidder> spawnPoint = new List<Hidder>();
+
+        for (int a = 0; a < maxRange; a++)
+        {
+            for (int i = 0; i < _hidders.Count; i++)
+            {
+                spawnPoint.Add(_hidders[i]);
+            }
+        }
+
+        spawnPoint.Shuffle();
 
         int count = HiddenObjects.instance.count;
-        for (int i = 0; i < count && i < _hidders.Count; i++)
+        for (int i = 0; i < count && i < spawnPoint.Count; i++)
         {
             Draggable d = HiddenObjects.instance.GetOne();
-            _hidders[i].SetDrag(d);
+            spawnPoint[i].SetDrag(d);
         }
     }
 

@@ -83,7 +83,7 @@ public class ContainerManager : MonoSingleton<ContainerManager>
         }
         else
         {
-            drag.Bumb();
+            drag.Bumb("bush");
         }
     }
 

@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89f05c5512074e59a3ec7d2634741a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: bush
   _centerCollider: {x: 0.3, y: 5.24}
   _sizeCollider: {x: 16.72, y: 8.87}
 --- !u!212 &212439140865732124

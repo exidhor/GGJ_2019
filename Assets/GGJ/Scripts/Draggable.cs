@@ -23,6 +23,12 @@ public class Draggable : DepthObject
         get { return _isHide; }
     }
 
+    public bool isBumping
+    {
+        get { return _isBumping; }
+    }
+
+    string _name;
     [SerializeField] PanoplyType _type;
     [SerializeField] Shape _shape;
     [SerializeField] Vector2 _centerCollider;
@@ -31,6 +37,7 @@ public class Draggable : DepthObject
     float _startTimeDrag = -100f;
     bool _isDragging;
 
+    float _delay;
     float _startTimeBump = -100f;
     float _bumpingStrength;
     bool _isBumping;
@@ -48,6 +55,8 @@ public class Draggable : DepthObject
                         size.x, 
                         size.y);
     }
+
+
 
     public void SetHide(bool hide)
     {
@@ -100,7 +109,8 @@ public class Draggable : DepthObject
         if(_isBumping)
         {
             bool isFinish;
-            Vector2 move = BumpManager.instance.Anim(out isFinish, _startTimeBump, _bumpingStrength);
+            //Vector2 move = BumpManager.instance.Anim(out isFinish, _startTimeBump, _bumpingStrength);
+            Vector2 move = BumpManager.instance.Anim(out isFinish, _startTimeBump, _bumpingStrength, _delay, _name);
         
             if(isFinish)
             {
@@ -119,14 +129,16 @@ public class Draggable : DepthObject
         }
     }
 
-    public void Bumb()
+    public void Bumb(string name)
     {
+        _name = _name;
         _isHide = false;
         _isBumping = true;
         _startTimeBump = Time.time;
-        _bumpingStrength = BumpManager.instance.GetStrength();
+        _bumpingStrength = BumpManager.instance.GetStrength(_name);
         _bumpingStrength *= Mathf.Sign(Random.value - 0.5f);
         _originBump = transform.position;
+        _delay = BumpManager.instance.GetDelay(_name);
     }
 
     protected override void OnDestroy()

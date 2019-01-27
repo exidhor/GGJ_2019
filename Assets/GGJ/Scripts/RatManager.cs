@@ -28,6 +28,7 @@ public class RatManager : MonoSingleton<RatManager>
                 return false;
         }
 
+        Subtitle.instance.StartAnim();
         return true;
     }
 

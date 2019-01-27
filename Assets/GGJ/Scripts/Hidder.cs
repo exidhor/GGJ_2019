@@ -86,9 +86,9 @@ public class Hidder : MonoBehaviour
         //size.x *= transform.lossyScale.x;
         //size.y *= transform.lossyScale.y;
 
-        return new Rect(center.x - size.x * (mult ? _multiY : 1f) / 2,
+        return new Rect(center.x - size.x * (mult ? _multiX : 1f) / 2,
                         center.y - size.y / 2,
-                        size.x * (mult ? _multiY : 1f),
+                        size.x * (mult ? _multiX : 1f),
                         size.y * (mult ? _multiY : 1f));
     }
 

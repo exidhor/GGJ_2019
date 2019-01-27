@@ -54,13 +54,29 @@ MonoBehaviour:
   _panoplies:
   - type: 0
     score: 10
-    cahos: 0
+    chaos: 0
     endMessage: Base Skeleton
   - type: 1
     score: 10
-    cahos: 0
+    chaos: 0
     endMessage: Fire Skeleton
   - type: 2
     score: 10
-    cahos: 0
+    chaos: 0
+    endMessage: Blue Skeleton
+  - type: 3
+    score: 10
+    chaos: 0
+    endMessage: Blue Skeleton
+  - type: 4
+    score: 10
+    chaos: 0
+    endMessage: Blue Skeleton
+  - type: 5
+    score: 10
+    chaos: 0
+    endMessage: Blue Skeleton
+  - type: 6
+    score: 10
+    chaos: 0
     endMessage: Blue Skeleton

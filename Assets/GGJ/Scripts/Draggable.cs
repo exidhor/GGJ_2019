@@ -8,6 +8,11 @@ public class Draggable : DepthObject
         get { return _shape; }
     }
 
+    public PanoplyType type
+    {
+        get { return _type; }
+    }
+
     public Vector2 center
     {
         get { return GetCollider().center; }
@@ -18,6 +23,7 @@ public class Draggable : DepthObject
         get { return _isHide; }
     }
 
+    [SerializeField] PanoplyType _type;
     [SerializeField] Shape _shape;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;

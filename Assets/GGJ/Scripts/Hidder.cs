@@ -27,7 +27,7 @@ public class Hidder : MonoBehaviour
 
     public bool CanHide(Draggable drag)
     {
-        Rect r = GetCollider();
+        Rect r = GetCollider(true);
 
         return r.Contains(drag.center);
     }

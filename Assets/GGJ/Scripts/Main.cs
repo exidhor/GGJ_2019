@@ -18,7 +18,7 @@ public class Main : MonoBehaviour
         {
             RatManager.instance.Clear();
         }
-        else
+        else if(!End.instance.isFinish)
         {
             DepthManager.instance.Actualize();
         }

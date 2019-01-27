@@ -56,6 +56,28 @@ MonoBehaviour:
   _cameraEnd: {fileID: 0}
   _endText: {fileID: 0}
   _timePerLetter: 0.1
+  _pelvisContainer: {fileID: 0}
+  _torsoContainer: {fileID: 0}
+  _headContainer: {fileID: 0}
+  _leftArm0Container: {fileID: 0}
+  _leftArm1Container: {fileID: 0}
+  _rightArm0Container: {fileID: 0}
+  _rightArm1Container: {fileID: 0}
+  _leftLeg0Container: {fileID: 0}
+  _leftLeg1Container: {fileID: 0}
+  _rightLeg0Container: {fileID: 0}
+  _rightLeg1Container: {fileID: 0}
+  _pelvis: {fileID: 0}
+  _torso: {fileID: 0}
+  _head: {fileID: 0}
+  _leftArm0: {fileID: 0}
+  _leftArm1: {fileID: 0}
+  _rightArm0: {fileID: 0}
+  _rightArm1: {fileID: 0}
+  _leftLeg0: {fileID: 0}
+  _leftLeg1: {fileID: 0}
+  _rightLeg0: {fileID: 0}
+  _rightLeg1: {fileID: 0}
   _anims:
   - {fileID: 0}
   - {fileID: 0}

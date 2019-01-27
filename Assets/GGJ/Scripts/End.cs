@@ -63,6 +63,8 @@ public class End : MonoSingleton<End>
 
     public void Actualize()
     {
+        _validator.SetAnim(ContainerManager.instance.CanFinish());
+
         if(Input.GetMouseButtonDown(0))
         {
             Vector2 wpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -69,7 +69,10 @@ public class ContainerManager : MonoSingleton<ContainerManager>
     {
         Container c = FindContainer(drag.center);
 
-        if (c == null) return;
+        if (c == null)
+        {
+            return;
+        }
 
         if(c.containing == null && c.shape == DraggableManager.instance.current.shape)
         {

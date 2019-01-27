@@ -36,8 +36,6 @@ public class Draggable : DepthObject
     {
         Vector2 center = _centerCollider + (Vector2)transform.position;
         Vector2 size = _sizeCollider;
-        //size.x *= transform.lossyScale.x;
-        //size.y *= transform.lossyScale.y;
 
         return new Rect(center.x - size.x / 2, 
                         center.y - size.y / 2,

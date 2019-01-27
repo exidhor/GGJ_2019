@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c4a12ef15c14b6f83166ee5775638a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _type: 2
   _shape: 0
   _centerCollider: {x: 0, y: 3.27}
   _sizeCollider: {x: 4.35, y: 6.6}

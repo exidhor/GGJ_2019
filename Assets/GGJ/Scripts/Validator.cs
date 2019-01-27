@@ -3,8 +3,11 @@ using System.Collections;
 
 public class Validator : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer _renderer;
+    [SerializeField] Sprite _defaultSprite;
     [SerializeField] Vector2 _centerCollider;
     [SerializeField] Vector2 _sizeCollider = Vector2.one;
+    [SerializeField] SpriteAnimator _animator;
 
     public Rect GetCollider()
     {
@@ -15,6 +18,16 @@ public class Validator : MonoBehaviour
                         center.y - size.y / 2,
                         size.x,
                         size.y);
+    }
+
+    public void SetAnim(bool state)
+    {
+        if(!state)
+        {
+            _renderer.sprite = _defaultSprite;
+        }
+
+        _animator.enabled = state;
     }
 
     void OnDrawGizmos()

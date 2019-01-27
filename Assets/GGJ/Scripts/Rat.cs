@@ -63,9 +63,10 @@ public class Rat : MonoBehaviour
         pos.x += speed * Time.deltaTime;
         transform.position = pos;
 
-        if(pos.x < min.x - offset || pos.x > max.x + offset)
+        if(has && (pos.x < min.x - offset || pos.x > max.x + offset))
         {
             hasQuit = true;
+            RatManager.instance.Clear();
         }
     }
 }

@@ -4,6 +4,8 @@ using Tools;
 
 public class SceneManager : MonoSingleton<SceneManager>
 {
+    public bool hasLoad;
+
     void Awake()
     {
         if(_instance == null)
@@ -19,28 +21,31 @@ public class SceneManager : MonoSingleton<SceneManager>
 
     public void Fade()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        //hasLoad = true;
 
-        Invoke("ReloadGame", 0.5f);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(1, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
+        //Invoke("ReloadGame", 0.5f);
     }
 
-    void ReloadGame()
-    {
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(0);
+    //void ReloadGame()
+    //{
+    //    UnityEngine.SceneManagement.SceneManager.UnloadScene(0);
 
 
-        Invoke("ReloadMainScene", 0.2f);
-    }
+    //    Invoke("ReloadMainScene", 1f);
+    //}
 
-    void ReloadMainScene()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+    //void ReloadMainScene()
+    //{
+    //    UnityEngine.SceneManagement.SceneManager.LoadScene(0, UnityEngine.SceneManagement.LoadSceneMode.Additive);
 
-        Invoke("UnloadScene", 1f);
-    }
+    //    Invoke("UnloadScene", 2f);
+    //}
 
-    void UnloadScene()
-    {
-        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(1);
-    }
+    //void UnloadScene()
+    //{
+    //    UnityEngine.SceneManagement.SceneManager.UnloadScene(1);
+    //}
 }

@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/GGJ/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/GGJ/Scenes/LEVELDESIGN.unity
     guid: dddd35388aa690e4c9346759f95ad1ea
+  - enabled: 1
+    path: Assets/GGJ/Scenes/LEVELDESIGN 1.unity
+    guid: 8b575e4aa8fb3487292f7d1e5d39019b
   - enabled: 1
     path: Assets/GGJ/Scenes/Void.unity
     guid: 2b4a4a9f8b187476aad26dff9c6f0c86

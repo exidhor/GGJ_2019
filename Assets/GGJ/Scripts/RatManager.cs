@@ -35,7 +35,7 @@ public class RatManager : MonoSingleton<RatManager>
     {
         for (int i = 0; i < _rats.Count; i++)
         {
-            Destroy(_rats[i].gameObject);
+            Destroy(_rats[i].gameObject, 0.1f);
         }
 
         _rats.Clear();

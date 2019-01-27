@@ -7,18 +7,23 @@ public class Main : MonoBehaviour
     void Start()
     {
         // INIT GLOBAL
-        RatManager.instance.Init();
+
+        if(!SceneManager.instance.hasLoad)
+        {
+            RatManager.instance.Init();
+        }
+
         HidderManager.instance.Spawn();
     }
 
     void Update () 
     {
-        bool animFi = RatManager.instance.IsFinish();
-        if (animFi)
-        {
-            RatManager.instance.Clear();
-        }
-        else if(!End.instance.isFinish)
+        bool animFi = SceneManager.instance.hasLoad || RatManager.instance.IsFinish();
+        //if (animFi)
+        //{
+        //    RatManager.instance.Clear();
+        //}
+        if(!End.instance.isFinish)
         {
             DepthManager.instance.Actualize();
         }

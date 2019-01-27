@@ -131,7 +131,7 @@ public class Draggable : DepthObject
 
     public void Bumb(string name)
     {
-        _name = _name;
+        _name = name;
         _isHide = false;
         _isBumping = true;
         _startTimeBump = Time.time;

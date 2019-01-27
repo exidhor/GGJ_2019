@@ -31,7 +31,7 @@ public class BumpManager : MonoSingleton<BumpManager>
 
         for (int i = 0; i < _datas.Count; i++)
         {
-            if (_datas[i].name.Equals(name))
+            if (_datas[i].name == name)
             {
                 bd = _datas[i];
             }

@@ -8,7 +8,7 @@ public class PanoplyData
 {
     public PanoplyType type;
     public int score;
-    public int cahos;
+    public int chaos;
     public string endMessage;
 }
 

@@ -77,4 +77,20 @@ public class Container : MonoBehaviour
 
         Gizmos.DrawLine(pos, pos + direction.normalized * 3);
     }
+
+    public int GetScore()
+    {
+        if (containing == null)
+            return 0;
+
+        return PanoplyManager.instance.Get(containing.type).score;
+    }
+
+    public int GetChaos()
+    {
+        if (containing == null)
+            return 0;
+
+        return PanoplyManager.instance.Get(containing.type).chaos;
+    }
 }

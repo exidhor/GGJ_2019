@@ -1881,6 +1881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34d4b56d13ed4c4e9d081d8175ebc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _chaos: {fileID: 1055371888}
+  _score: {fileID: 1317932484}
 --- !u!1001 &823799144
 Prefab:
   m_ObjectHideFlags: 0
@@ -2401,7 +2403,7 @@ GameObject:
   - component: {fileID: 1055371889}
   - component: {fileID: 1055371888}
   m_Layer: 0
-  m_Name: Cahos Text
+  m_Name: Chaos Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2457,7 +2459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cahos : 100'
+  m_Text: 'Chaos : 0'
 --- !u!222 &1055371889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2944,7 +2946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score : 100'
+  m_Text: 'Score : 0'
 --- !u!222 &1317932485
 CanvasRenderer:
   m_ObjectHideFlags: 0

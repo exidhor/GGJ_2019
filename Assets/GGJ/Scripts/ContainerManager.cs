@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using Tools;
 
 public class ContainerManager : MonoSingleton<ContainerManager>
 {
+    [SerializeField] Text _chaos;
+    [SerializeField] Text _score;
+
     List<Container> _containers = new List<Container>();
 
     public void Register(Container container)
@@ -46,6 +50,21 @@ public class ContainerManager : MonoSingleton<ContainerManager>
         }
     }
 
+    void RecomputeTexts()
+    {
+        int score = 0;
+        int chaos = 0;
+
+        for (int i = 0; i < _containers.Count; i++)
+        {
+            score += _containers[i].GetScore();
+            chaos += _containers[i].GetChaos();
+        }
+
+        _score.text = "Score : " + score;
+        _chaos.text = "Chaos : " + chaos;
+    }
+
     public void ReleaseDrag(Draggable drag)
     {
         Container c = FindContainer(drag.center);
@@ -55,6 +74,7 @@ public class ContainerManager : MonoSingleton<ContainerManager>
         if(c.containing == null && c.shape == DraggableManager.instance.current.shape)
         {
             c.Fill(drag);
+            RecomputeTexts();
         }
         else
         {
@@ -68,6 +88,8 @@ public class ContainerManager : MonoSingleton<ContainerManager>
         {
             _containers[i].TryToRelease(drag);
         }
+
+        RecomputeTexts();
     }
 
     Container FindContainer(Vector2 wpos)
